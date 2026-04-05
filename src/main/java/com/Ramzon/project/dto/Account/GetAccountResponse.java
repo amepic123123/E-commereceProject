@@ -1,5 +1,11 @@
 package com.Ramzon.project.dto.Account;
 
-public record GetAccountResponse() {
+public record GetAccountResponse(
+
+    Long id,
+    String firstName,
+    String lastName,
+    String email,
+    String phoneNumber
     
-}
+) {}
