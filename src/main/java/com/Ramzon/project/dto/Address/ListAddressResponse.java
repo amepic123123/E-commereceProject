@@ -1,11 +1,12 @@
 package com.Ramzon.project.dto.Address;
 
-public record UpdateAddressResponse(
-    String message,
+public record ListAddressResponse(
+
     String addressLine,
     String city,
     String state,
     String postalCode,
     String country,
     Boolean isDefault
+
 ) {}

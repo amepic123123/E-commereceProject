@@ -1,5 +1,11 @@
 package com.Ramzon.project.dto.Product;
 
-public record GetProductResponse() {
-    
-}
+import java.math.BigDecimal;
+
+public record GetProductResponse(
+
+    String name,
+    String description,
+    BigDecimal price
+
+) {}

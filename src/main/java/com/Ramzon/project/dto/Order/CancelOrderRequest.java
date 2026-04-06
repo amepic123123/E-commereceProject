@@ -1,5 +1,11 @@
 package com.Ramzon.project.dto.Order;
 
-public record CancelOrderRequest() {
-    
-}
+
+import jakarta.validation.constraints.Size;
+
+public record CancelOrderRequest(
+
+    @Size(max = 500, message = "Reason must be less than 500 characters")
+    String reason
+
+) {}

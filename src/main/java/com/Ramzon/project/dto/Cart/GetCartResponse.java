@@ -1,5 +1,13 @@
 package com.Ramzon.project.dto.Cart;
 
-public record GetCartResponse() {
-    
-}
+import java.math.BigDecimal;
+import java.util.List;
+
+public record GetCartResponse(
+
+    Long id,
+    Long userId,
+    List<CartItemResponse> items,
+    BigDecimal totalPrice
+
+) {}

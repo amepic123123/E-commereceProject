@@ -1,5 +1,10 @@
 package com.Ramzon.project.dto.Product;
 
-public record ListProductResponse() {
-    
-}
+import java.util.List;
+
+public record ListProductResponse(
+
+
+   List<GetProductResponse> products
+
+) {}

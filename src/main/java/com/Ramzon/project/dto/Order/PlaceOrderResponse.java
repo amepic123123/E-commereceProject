@@ -1,5 +1,8 @@
 package com.Ramzon.project.dto.Order;
 
-public record PlaceOrderResponse() {
+public record PlaceOrderResponse(
+
+    Long orderId,
+    String message
     
-}
+) {}
