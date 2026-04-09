@@ -1,11 +1,11 @@
 package com.Ramzon.project.dto.Product;
 
-import java.math.BigDecimal;
+import java.util.List;
 
 public record GetProductResponse(
 
     String name,
     String description,
-    BigDecimal price
+    List<GetItemResponse> items
 
 ) {}

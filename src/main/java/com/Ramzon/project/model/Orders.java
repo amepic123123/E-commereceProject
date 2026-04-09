@@ -17,6 +17,7 @@ import jakarta.persistence.PrePersist;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.PositiveOrZero;
+import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -40,7 +41,7 @@ public class Orders {
 
     @Enumerated(EnumType.STRING)
     @NotNull
-    @Column(name = "order_status")
+    @Column(name = "order_status", nullable = false)
     private OrderStatus orderStatus;
 
     @PositiveOrZero
@@ -55,5 +56,9 @@ public class Orders {
     @Column(updatable = false, name = "order_date", nullable = false)
     @NotNull
     private LocalDateTime orderDate;
+
+    @Size(max = 255)
+    @Column(name = "reason")
+    private String reason;
     
 }

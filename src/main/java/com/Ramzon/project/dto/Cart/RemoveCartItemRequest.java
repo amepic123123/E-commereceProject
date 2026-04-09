@@ -5,9 +5,9 @@ import jakarta.validation.constraints.Positive;
 
 public record RemoveCartItemRequest(
 
-    @NotNull(message = "Product ID is required")
-    @Positive (message = "Product ID must be a positive number")
-    Long productId,
+    @NotNull(message = "Product Item ID is required")
+    @Positive (message = "Product Item ID must be a positive number")
+    Long product_item_id,
     
     @NotNull(message = "Quantity is required")
     @Positive(message = "Quantity must be a positive number")

@@ -26,6 +26,7 @@ public class ProductItems {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotNull
     @ManyToOne(fetch = jakarta.persistence.FetchType.LAZY)
     @JoinColumn(name = "product_id", nullable = false)
     private Product product;

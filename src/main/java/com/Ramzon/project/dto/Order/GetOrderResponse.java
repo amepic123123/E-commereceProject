@@ -8,5 +8,4 @@ public record GetOrderResponse(
     OrderStatus status,
     String reason
 
-
 ) {}

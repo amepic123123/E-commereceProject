@@ -4,12 +4,13 @@ import jakarta.persistence.Entity;
 import lombok.Getter;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.JoinColumn;
 import lombok.NoArgsConstructor;
 import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.PositiveOrZero;
+import jakarta.validation.constraints.Positive;
 import jakarta.persistence.Column;
 import lombok.Setter;
 
@@ -17,6 +18,9 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
+@Table(uniqueConstraints = {
+    @jakarta.persistence.UniqueConstraint(columnNames = {"user_id", "product_item_id"})
+})
 public class CartItems {
 
     @Id
@@ -33,7 +37,7 @@ public class CartItems {
     @JoinColumn(name = "product_item_id", nullable = false)
     private ProductItems productItems;
 
-    @PositiveOrZero
+    @Positive
     @NotNull
     @Column(name = "quantity", nullable = false)
     private Integer quantity;

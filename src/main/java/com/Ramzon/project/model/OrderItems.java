@@ -8,8 +8,9 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.PositiveOrZero;
+import jakarta.validation.constraints.Positive;
 import jakarta.persistence.Column;
 import lombok.Setter;
 
@@ -17,6 +18,9 @@ import lombok.Setter;
 @NoArgsConstructor
 @Setter
 @Getter
+@Table(uniqueConstraints = 
+    @jakarta.persistence.UniqueConstraint(columnNames = {"order_id", "product_item_id"})
+)
 public class OrderItems {
 
     @Id
@@ -34,7 +38,7 @@ public class OrderItems {
     private ProductItems productItems;
 
     @NotNull
-    @PositiveOrZero
+    @Positive
     @Column(name = "quantity", nullable = false)
     private Integer quantity;
 

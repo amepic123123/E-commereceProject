@@ -23,8 +23,8 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToMany(mappedBy = "product", cascade = jakarta.persistence.CascadeType.ALL)
-    private List<ProductItems> products;
+    @OneToMany(mappedBy = "product", cascade = jakarta.persistence.CascadeType.ALL, orphanRemoval = true)
+    private List<ProductItems> productItems;
 
     
     @NotBlank
